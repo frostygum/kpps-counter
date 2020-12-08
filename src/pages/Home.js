@@ -36,7 +36,6 @@ function Home() {
   let [lastSet, setLast] = useState('0/0/0 0.0.0');
 
   useEffect(() => {
-    // removeLocalStorage(KEY_DATA);
     let data = getLocalStorage(CONST.KEY_DATA);
     let lastDate = getLocalStorage(CONST.KEY_LMD);
     if(data) {

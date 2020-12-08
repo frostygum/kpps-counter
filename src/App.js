@@ -1,7 +1,7 @@
 import {
   Route,
   Switch,
-  BrowserRouter as Router
+  HashRouter as Router
 } from 'react-router-dom';
 import { Navbar } from './components';
 import styled from 'styled-components';
@@ -22,25 +22,26 @@ const MobileWrapper = styled.div`
 
 function App() {
   return (
-    <Wrapper>
-      <MobileWrapper>
-        <Navbar />
-        <Router>
-          <Switch>
+    <Router>
+      <Switch>
+        <Wrapper>
+          <MobileWrapper>
+            <Navbar />
             {
               routes.map((route, idx, props) =>
                 <Route
                   path={route.path}
                   component={route.component}
                   key={idx}
+                  exact={route.exact}
                   {...props}
                 />
               )
             }
-          </Switch>
-        </Router>
-      </MobileWrapper>
-    </Wrapper>
+          </MobileWrapper>
+        </Wrapper>
+      </Switch>
+    </Router>
   );
 }
 

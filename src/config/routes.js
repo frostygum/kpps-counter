@@ -4,9 +4,10 @@ import {
 } from '../pages';
 
 const routes = [
-  { path: '/info', component: Info },
   // This is main page
-  { path: '/', component: Home },
+  { exact: true, path: '/', component: Home },
+
+  { path: '/settings', component: Info },
 ];
 
 export default routes;

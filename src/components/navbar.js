@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Navbar, 
   NavbarBrand,
@@ -9,7 +10,8 @@ import {
   NavLink
 } from 'reactstrap';
 
-function CustomNavbar() {
+function CustomNavbar(props) {
+  const history = useHistory();
   let [isOpen, setNavbar] = useState(false);
 
   function toggle() {
@@ -23,7 +25,7 @@ function CustomNavbar() {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink href="/info">Info</NavLink>
+            <NavLink onClick={() => history.push('/settings')}>Info</NavLink>
           </NavItem>
         </Nav>
       </Collapse>
