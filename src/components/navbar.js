@@ -20,7 +20,7 @@ function CustomNavbar(props) {
 
   return(
     <Navbar color="dark" dark expand="md">
-      <NavbarBrand href="/">Counter</NavbarBrand>
+      <NavbarBrand onClick={() => history.push('/')}>Counter</NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
